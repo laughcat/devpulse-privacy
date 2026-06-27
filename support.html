@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevPulse — Technical Support</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --accent: #0071e3;
+            --border: #d2d2d7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1d1d1f;
+                --text: #f5f5f7;
+                --text-secondary: #a1a1a6;
+                --accent: #2997ff;
+                --border: #424245;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 17px;
+            font-weight: 600;
+            margin: 32px 0 12px;
+            color: var(--accent);
+        }
+        p, li {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        ul { padding-left: 20px; margin-bottom: 16px; }
+        li { margin-bottom: 4px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .contact-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .contact-card a {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 40px 0;
+        }
+        footer {
+            color: var(--text-secondary);
+            font-size: 13px;
+            text-align: center;
+            padding-top: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>DevPulse Support</h1>
+    <p class="subtitle">独立开发者收入监控 — 技术支持</p>
+
+    <h2>📧 Contact Us</h2>
+    <div class="contact-card">
+        <p style="margin-bottom:4px;">Email</p>
+        <a href="mailto:laughcat.lee@outlook.com">laughcat.lee@outlook.com</a>
+        <p style="margin-top:12px; color:var(--text-secondary); font-size:14px;">我们通常在 24 小时内回复 · We typically respond within 24 hours</p>
+    </div>
+
+    <h2>📱 In-App Feedback</h2>
+    <p>你也可以直接在 App 内提交反馈：</p>
+    <ul>
+        <li>打开 DevPulse → 设置 → <strong>发送反馈</strong></li>
+        <li>You can also submit feedback directly in the app: Settings → <strong>Send Feedback</strong></li>
+    </ul>
+
+    <h2>❓ Frequently Asked Questions</h2>
+
+    <p><strong>Q: 如何连接 RevenueCat？</strong><br>
+    A: 打开 App → 添加项目 → 选择 RevenueCat → 输入你的 v2 API Key。Key 存储在设备 Keychain 中，不会上传。</p>
+
+    <p><strong>Q: 如何连接 App Store Connect？</strong><br>
+    A: 需要在 App Store Connect 生成一个 .p8 API Key，然后在 DevPulse 中选择该文件。App 使用 CryptoKit 在本机生成 JWT 签名，密钥不离开设备。</p>
+
+    <p><strong>Q: Free 和 Pro 有什么区别？</strong><br>
+    A: Free 版支持 1 个项目 + Small/Medium Widget。Pro 版（$4.99/月 或 $39/年）支持无限项目 + Large Widget + 异常检测通知 + 每日摘要。</p>
+
+    <p><strong>Q: 我的数据安全吗？</strong><br>
+    A: 100% 本地架构，无后端服务器。API Key 存储在 iOS Keychain（硬件级加密），所有数据都在你的设备上。详见 <a href="https://laughcat.github.io/devpulse-privacy/">隐私政策</a>。</p>
+
+    <p><strong>Q: 如何取消订阅？</strong><br>
+    A: iOS 系统设置 → 你的 Apple ID → 订阅 → DevPulse → 取消订阅。所有订阅由 Apple 管理。</p>
+
+    <p><strong>Q: 支持哪些数据源？</strong><br>
+    A: RevenueCat + App Store Connect + GitHub（Stars / Issues）。Stripe 将在未来版本中支持。</p>
+
+    <hr>
+
+    <p style="color:var(--text-secondary); font-size:14px;">
+        <a href="https://laughcat.github.io/devpulse-privacy/">Privacy Policy / 隐私政策</a>
+    </p>
+
+    <footer>© 2026 DevPulse</footer>
+
+</body>
+</html>
