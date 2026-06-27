@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +30,26 @@
             max-width: 720px;
             margin: 0 auto;
             padding: 48px 24px;
+        }
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+        .lang-switch button {
+            font-size: 14px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .lang-switch button.active {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
         }
         h1 {
             font-size: 32px;
@@ -67,6 +87,8 @@
             font-size: 18px;
             font-weight: 600;
         }
+        .section { display: none; }
+        .section.active { display: block; }
         hr {
             border: none;
             border-top: 1px solid var(--border);
@@ -82,50 +104,105 @@
 </head>
 <body>
 
+<div class="lang-switch">
+    <button onclick="switchLang('en')" id="btn-en" class="active">English</button>
+    <button onclick="switchLang('zh')" id="btn-zh">中文</button>
+</div>
+
+<!-- English -->
+<div id="section-en" class="section active">
     <h1>DevPulse Support</h1>
-    <p class="subtitle">独立开发者收入监控 — 技术支持</p>
+    <p class="subtitle">Revenue monitoring for indie developers — Technical Support</p>
 
     <h2>📧 Contact Us</h2>
     <div class="contact-card">
         <p style="margin-bottom:4px;">Email</p>
         <a href="mailto:laughcat.lee@outlook.com">laughcat.lee@outlook.com</a>
-        <p style="margin-top:12px; color:var(--text-secondary); font-size:14px;">我们通常在 24 小时内回复 · We typically respond within 24 hours</p>
+        <p style="margin-top:12px; color:var(--text-secondary); font-size:14px;">We typically respond within 24 hours</p>
     </div>
 
     <h2>📱 In-App Feedback</h2>
-    <p>你也可以直接在 App 内提交反馈：</p>
+    <p>You can also submit feedback directly in the app:</p>
     <ul>
-        <li>打开 DevPulse → 设置 → <strong>发送反馈</strong></li>
-        <li>You can also submit feedback directly in the app: Settings → <strong>Send Feedback</strong></li>
+        <li>Open DevPulse → Settings → <strong>Send Feedback</strong></li>
     </ul>
 
     <h2>❓ Frequently Asked Questions</h2>
+
+    <p><strong>Q: How do I connect RevenueCat?</strong><br>
+    A: Open the app → Add a project → Select RevenueCat → Enter your v2 API Key. Keys are stored in your device Keychain and never leave your device.</p>
+
+    <p><strong>Q: How do I connect App Store Connect?</strong><br>
+    A: Generate a .p8 API Key in App Store Connect, then select it in DevPulse. The app generates JWT signatures locally using CryptoKit — your key never leaves your device.</p>
+
+    <p><strong>Q: What's the difference between Free and Pro?</strong><br>
+    A: Free supports 1 project with Small &amp; Medium widgets and basic metrics. Pro unlocks unlimited projects, Large widgets, anomaly detection alerts, and daily revenue summaries.</p>
+
+    <p><strong>Q: Is my data secure?</strong><br>
+    A: Yes. 100% client-side architecture — no backend servers. API Keys are stored in iOS Keychain with hardware-level encryption. All data stays on your device. See our <a href="https://laughcat.github.io/devpulse-privacy/">Privacy Policy</a> for details.</p>
+
+    <p><strong>Q: How do I cancel my subscription?</strong><br>
+    A: iOS Settings → Your Apple ID → Subscriptions → DevPulse → Cancel. All subscriptions are managed by Apple.</p>
+
+    <p><strong>Q: Which data sources are supported?</strong><br>
+    A: RevenueCat, App Store Connect, and GitHub (Stars &amp; Issues).</p>
+</div>
+
+<!-- Chinese -->
+<div id="section-zh" class="section">
+    <h1>DevPulse 技术支持</h1>
+    <p class="subtitle">独立开发者收入监控 — 技术支持</p>
+
+    <h2>📧 联系我们</h2>
+    <div class="contact-card">
+        <p style="margin-bottom:4px;">邮箱</p>
+        <a href="mailto:laughcat.lee@outlook.com">laughcat.lee@outlook.com</a>
+        <p style="margin-top:12px; color:var(--text-secondary); font-size:14px;">我们通常在 24 小时内回复</p>
+    </div>
+
+    <h2>📱 App 内反馈</h2>
+    <p>你也可以直接在 App 内提交反馈：</p>
+    <ul>
+        <li>打开 DevPulse → 设置 → <strong>发送反馈</strong></li>
+    </ul>
+
+    <h2>❓ 常见问题</h2>
 
     <p><strong>Q: 如何连接 RevenueCat？</strong><br>
     A: 打开 App → 添加项目 → 选择 RevenueCat → 输入你的 v2 API Key。Key 存储在设备 Keychain 中，不会上传。</p>
 
     <p><strong>Q: 如何连接 App Store Connect？</strong><br>
-    A: 需要在 App Store Connect 生成一个 .p8 API Key，然后在 DevPulse 中选择该文件。App 使用 CryptoKit 在本机生成 JWT 签名，密钥不离开设备。</p>
+    A: 在 App Store Connect 中生成 .p8 API Key，然后在 DevPulse 中选择该文件。App 使用 CryptoKit 在本机生成 JWT 签名，密钥不离开设备。</p>
 
     <p><strong>Q: Free 和 Pro 有什么区别？</strong><br>
-    A: Free 版支持 1 个项目 + Small/Medium Widget。Pro 版（$4.99/月 或 $39/年）支持无限项目 + Large Widget + 异常检测通知 + 每日摘要。</p>
+    A: Free 版支持 1 个项目、Small / Medium Widget 和基础指标。Pro 版解锁无限项目、Large Widget、异常检测通知和每日收入摘要。具体价格见 App Store 产品页面。</p>
 
     <p><strong>Q: 我的数据安全吗？</strong><br>
-    A: 100% 本地架构，无后端服务器。API Key 存储在 iOS Keychain（硬件级加密），所有数据都在你的设备上。详见 <a href="https://laughcat.github.io/devpulse-privacy/">隐私政策</a>。</p>
+    A: 安全。100% 纯本地架构，无后端服务器。API Key 存储在 iOS Keychain 中（硬件级 AES 加密），所有数据都在你的设备上。详见 <a href="https://laughcat.github.io/devpulse-privacy/">隐私政策</a>。</p>
 
     <p><strong>Q: 如何取消订阅？</strong><br>
     A: iOS 系统设置 → 你的 Apple ID → 订阅 → DevPulse → 取消订阅。所有订阅由 Apple 管理。</p>
 
     <p><strong>Q: 支持哪些数据源？</strong><br>
-    A: RevenueCat + App Store Connect + GitHub（Stars / Issues）。Stripe 将在未来版本中支持。</p>
+    A: RevenueCat、App Store Connect、GitHub（Stars / Issues）。</p>
+</div>
 
-    <hr>
+<hr>
 
-    <p style="color:var(--text-secondary); font-size:14px;">
-        <a href="https://laughcat.github.io/devpulse-privacy/">Privacy Policy / 隐私政策</a>
-    </p>
+<p style="color:var(--text-secondary); font-size:14px;">
+    <a href="https://laughcat.github.io/devpulse-privacy/">Privacy Policy / 隐私政策</a>
+</p>
 
-    <footer>© 2026 DevPulse</footer>
+<footer>© 2026 DevPulse</footer>
+
+<script>
+function switchLang(lang) {
+    document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.lang-switch button').forEach(el => el.classList.remove('active'));
+    document.getElementById('section-' + lang).classList.add('active');
+    document.getElementById('btn-' + lang).classList.add('active');
+}
+</script>
 
 </body>
 </html>
