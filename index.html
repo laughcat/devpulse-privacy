@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevPulse — Privacy Policy</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --accent: #0071e3;
+            --border: #d2d2d7;
+            --radius: 12px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1d1d1f;
+                --text: #f5f5f7;
+                --text-secondary: #a1a1a6;
+                --accent: #2997ff;
+                --border: #424245;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+        .lang-switch button {
+            font-size: 14px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .lang-switch button.active {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+        .update-date {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 32px;
+        }
+        .policy-section {
+            display: none;
+        }
+        .policy-section.active {
+            display: block;
+        }
+        h2 {
+            font-size: 17px;
+            font-weight: 600;
+            margin: 24px 0 8px;
+            color: var(--accent);
+        }
+        p, li {
+            font-size: 16px;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 40px 0;
+        }
+        footer {
+            color: var(--text-secondary);
+            font-size: 13px;
+            text-align: center;
+            padding-top: 48px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="lang-switch">
+    <button onclick="switchLang('en')" id="btn-en" class="active">English</button>
+    <button onclick="switchLang('zh')" id="btn-zh">中文</button>
+</div>
+
+<!-- English -->
+<div id="section-en" class="policy-section active">
+    <h1>Privacy Policy</h1>
+    <p class="update-date">Last updated: June 21, 2026</p>
+
+    <p>DevPulse (hereinafter "we") is an application that runs entirely on your device.<br>
+    <strong>The core principle of this Privacy Policy is: we do not collect any of your data.</strong></p>
+
+    <h2>1. What We Don't Collect</h2>
+    <ul>
+        <li>No account registration required — no name, email, or any personal information needed</li>
+        <li>No usage tracking — no analytics, no instrumentation, no data reporting</li>
+        <li>No device information collection — no IDFA access, no device identifiers</li>
+        <li>No data uploaded to servers — we have no servers</li>
+    </ul>
+
+    <h2>2. Where Data Is Stored</h2>
+    <p>All your data is stored entirely on your device:</p>
+    <ul>
+        <li>API Keys, secrets → iOS Keychain (hardware-level AES encryption)</li>
+        <li>Project configuration, cached data → App local sandbox + App Group shared container</li>
+        <li>No data ever leaves your device</li>
+    </ul>
+
+    <h2>3. Third-Party API Calls</h2>
+    <p>The app makes HTTPS requests directly to the following platforms using the API Keys you provide:</p>
+    <ul>
+        <li>RevenueCat API — fetch subscription revenue data</li>
+        <li>App Store Connect API — fetch download and rating data</li>
+        <li>GitHub API — fetch repository data</li>
+    </ul>
+    <p>These requests are sent directly from your device to third-party servers, without passing through any intermediate servers.</p>
+
+    <h2>4. Data Deletion</h2>
+    <p>All data is stored locally on your device. You can delete it within the app:</p>
+    <ul>
+        <li>Go to Settings → Data Management → tap "Delete All Data"</li>
+    </ul>
+    <p>Since we cannot remotely access your device, we cannot delete data on your behalf. Deletion is entirely under your control.</p>
+
+    <h2>5. Children's Privacy</h2>
+    <p>This service is not intended for children under the age of 13.</p>
+
+    <h2>6. Privacy Policy Updates</h2>
+    <p>We may update this Privacy Policy from time to time. Updated policies will be published within the app.</p>
+
+    <h2>7. Contact Us</h2>
+    <p>If you have any questions, please contact us via:</p>
+    <ul>
+        <li>Email: <a href="mailto:laughcat.lee@outlook.com">laughcat.lee@outlook.com</a></li>
+        <li>In-app feedback: Settings → Send Feedback</li>
+    </ul>
+</div>
+
+<!-- Chinese -->
+<div id="section-zh" class="policy-section">
+    <h1>隐私政策</h1>
+    <p class="update-date">最后更新日期：2026年6月21日</p>
+
+    <p>DevPulse（以下简称"我们"）是一款完全运行在您设备上的本地应用。<br>
+    <strong>本隐私政策的核心原则是：我们不收集您的任何数据。</strong></p>
+
+    <h2>1. 我们不收集什么</h2>
+    <ul>
+        <li>不需要注册账户 — 无需提供姓名、邮箱或任何个人信息</li>
+        <li>不追踪使用行为 — 无埋点、无分析工具、无数据上报</li>
+        <li>不收集设备信息 — 不读取 IDFA、不获取设备标识符</li>
+        <li>不将任何数据上传到服务器 — 我们没有服务器</li>
+    </ul>
+
+    <h2>2. 数据存储位置</h2>
+    <p>您的所有数据完全存储在您的设备上：</p>
+    <ul>
+        <li>API Key、密钥 → iOS Keychain（硬件级 AES 加密）</li>
+        <li>项目配置、缓存数据 → 应用本地沙盒 + App Group 共享容器</li>
+        <li>没有任何数据离开您的设备</li>
+    </ul>
+
+    <h2>3. 第三方 API 调用</h2>
+    <p>App 通过您提供的 API Key 直接向以下平台发起 HTTPS 请求：</p>
+    <ul>
+        <li>RevenueCat API — 获取订阅收入数据</li>
+        <li>App Store Connect API — 获取下载量、评分数据</li>
+        <li>GitHub API — 获取仓库数据</li>
+    </ul>
+    <p>这些请求从您的设备直接发送到第三方服务器，不经由任何中间服务器。</p>
+
+    <h2>4. 数据删除</h2>
+    <p>所有数据存储在您的设备本地。您可以在 App 内完成删除：</p>
+    <ul>
+        <li>在「设置」→「数据管理」中点击「删除所有数据」</li>
+    </ul>
+    <p>由于我们无法远程访问您的设备，我们无法代为删除。删除操作由您完全控制。</p>
+
+    <h2>5. 儿童隐私</h2>
+    <p>本服务不面向 13 岁以下儿童。</p>
+
+    <h2>6. 隐私政策更新</h2>
+    <p>我们可能会不时更新本隐私政策。更新后的政策将在应用内发布。</p>
+
+    <h2>7. 联系我们</h2>
+    <p>如有任何问题，请通过以下方式联系我们：</p>
+    <ul>
+        <li>邮件：<a href="mailto:laughcat.lee@outlook.com">laughcat.lee@outlook.com</a></li>
+        <li>App 内反馈功能：设置 → 发送反馈</li>
+    </ul>
+</div>
+
+<hr>
+
+<footer>
+    © 2026 DevPulse. All rights reserved.
+</footer>
+
+<script>
+function switchLang(lang) {
+    document.querySelectorAll('.policy-section').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.lang-switch button').forEach(el => el.classList.remove('active'));
+    document.getElementById('section-' + lang).classList.add('active');
+    document.getElementById('btn-' + lang).classList.add('active');
+}
+</script>
+
+</body>
+</html>
